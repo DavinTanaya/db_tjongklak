@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price', 10,2);
-            $table->integer('stock');
-            $table->foreignId('category_id')->references('id')->on('categories')->cascadeOnDelete()->cascadeOnUpdate();;
+            $table->enum('category', ['Men', 'Women', 'Batik Cloth', 'Others']);
             $table->text('description');
             $table->text('care_instructions');
             $table->foreignId('size_id');

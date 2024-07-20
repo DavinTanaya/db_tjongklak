@@ -18,7 +18,7 @@ return new class extends Migration
             $table->float('chest');
             $table->float('waist');
             $table->float('hip');
-            $table->float('length'); 
+            $table->float('length');
             $table->integer('stock');
             $table->timestamps();
         });

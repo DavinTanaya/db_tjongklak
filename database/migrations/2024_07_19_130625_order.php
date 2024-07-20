@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->decimal('total_price',10, 2);
-            $table->enum('status', ['Waiting for Payment', 'Payment Confirm', 'In Delivery', 'Completed', 'Cancelled', 'Return']);
+            $table->enum('status', ['Waiting for Payment', 'Payment Confirm', 'In Delivery', 'Completed', 'Cancelled', 'Return'])->default('Waiting for Payment');
             $table->foreignId('address_id')->references('id')->on('address')->cascadeOnDelete()->cascadeOnUpdate()->nullable();
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

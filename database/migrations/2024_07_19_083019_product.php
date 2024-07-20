@@ -17,9 +17,9 @@ return new class extends Migration
             $table->decimal('price', 10,2);
             $table->enum('category', ['Men', 'Women', 'Batik Cloth', 'Others']);
             $table->text('description');
-            $table->text('care_instructions');
+            $table->text('care_instructions')->nullable();
             $table->foreignId('size_id');
-            $table->boolean('is_purchased');
+            $table->boolean('is_purchased')->default(false);
             $table->timestamps();
         });
     }
